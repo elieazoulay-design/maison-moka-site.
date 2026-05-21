@@ -1,184 +1,116 @@
-import React from "react";
-import { motion } from "framer-motion";
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maison Moka</title>
 
-const tiramisus = [
-  ["Poire Vanille de Madagascar", "Poire pochée au sirop léger, vanille de Madagascar, crème mascarpone et biscuit maison.", "75 DH"],
-  ["Crème de Pistache", "Crème de pistache onctueuse, mascarpone légère et biscuit cuillère moelleux.", "75 DH"],
-  ["Mangue Coco Exotique", "Mangue fraîche, coco râpée, crème mascarpone et biscuit cuillère maison.", "75 DH"],
-  ["Chocolat Éclat de Noisette", "Ganache chocolat au lait, éclats de noisettes torréfiées et mousse mascarpone.", "75 DH"],
-  ["Éclat de Country Nutella", "Nutella généreux, éclats croustillants de Country, mascarpone et biscuit imbibé.", "75 DH"],
-  ["Délice Café", "Crème mascarpone aérienne et biscuit maison infusé au café Arabica.", "75 DH"],
-  ["Caramel Beurre Salé Noix de Pécan", "Caramel beurre salé maison, noix de pécan grillées et mascarpone montée.", "75 DH"],
-  ["Framboise Pistache Kunafa", "Pistache onctueuse, mascarpone, kunafa, framboises fraîches et crème pistache gourmande.", "75 DH"],
-];
+  <style>
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:#f8f4ef;
+      color:#2b2b2b;
+    }
 
-const drinks = [
-  ["Matcha", "45 DH / 55 DH"],
-  ["Matcha Mangue", "45 DH / 55 DH"],
-  ["Matcha Fraise", "45 DH / 55 DH"],
-  ["Ube Coco", "40 DH / 55 DH"],
-  ["Thé Glacé", "45 DH / 55 DH"],
-  ["Cocktail du Jour", "40 DH / 55 DH"],
-  ["Expresso", "25 DH"],
-  ["Chocolat Chaud", "35 DH"],
-  ["Café Latte", "35 DH"],
-  ["Cappuccino", "35 DH"],
-  ["Macchiato", "30 DH"],
-  ["Mochaccino", "38 DH"],
-  ["Iced Latte", "45 DH / 55 DH"],
-  ["Iced Macchiato", "45 DH / 55 DH"],
-  ["Iced Mochaccino", "45 DH / 55 DH"],
-  ["Frappuccino Chocolat", "45 DH / 55 DH"],
-  ["Frappuccino Caramel", "45 DH / 55 DH"],
-  ["Frappuccino Vanille", "40 DH / 55 DH"],
-];
+    header{
+      background:#d9c2a3;
+      padding:60px 20px;
+      text-align:center;
+    }
 
-const highlights = ["4.9★ Google rating", "238 reviews", "Tiramisu artisanaux", "Matcha & Ube signatures"];
+    h1{
+      margin:0;
+      font-size:60px;
+    }
 
-export default function MaisonMokaSite() {
-  return (
-    <main className="min-h-screen bg-[#f7f1e8] text-[#241812]">
-      <section className="relative overflow-hidden px-6 py-7 md:px-12">
-        <nav className="mx-auto flex max-w-7xl items-center justify-between">
-          <div>
-            <p className="text-xl font-light tracking-[0.55em]">MAISON MOKA</p>
-            <p className="mt-1 text-xs uppercase tracking-[0.35em] text-[#8a6a55]">Douceur & raffinement</p>
-          </div>
-          <div className="hidden gap-8 text-xs uppercase tracking-[0.22em] md:flex">
-            <a href="#menu">Menu</a>
-            <a href="#story">Maison</a>
-            <a href="#reviews">Avis</a>
-            <a href="#contact">Contact</a>
-          </div>
-          <a href="tel:+212600912813" className="rounded-full border border-[#2a1b14]/20 px-5 py-3 text-xs uppercase tracking-[0.18em]">Appeler</a>
-        </nav>
+    .subtitle{
+      margin-top:10px;
+      font-size:22px;
+    }
 
-        <div className="mx-auto grid min-h-[86vh] max-w-7xl items-center gap-12 py-16 md:grid-cols-[1.05fr_.95fr]">
-          <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <p className="mb-5 text-sm uppercase tracking-[0.35em] text-[#9b735c]">Pâtisserie · Coffee shop · Marrakech</p>
-            <h1 className="max-w-3xl text-6xl font-light leading-[0.95] tracking-[-0.05em] md:text-8xl">
-              Tiramisu artisanal, boissons signatures, ambiance raffinée.
-            </h1>
-            <p className="mt-8 max-w-xl text-lg leading-8 text-[#6c5548]">
-              Maison Moka est une adresse premium à Marrakech pensée pour les amateurs de tiramisu, matcha, ube et pauses gourmandes dans un décor calme et élégant.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <a href="#menu" className="rounded-full bg-[#2a1b14] px-8 py-4 text-sm uppercase tracking-[0.2em] text-white">Voir le menu</a>
-              <a href="https://www.instagram.com/maisonmoka___/" className="rounded-full border border-[#2a1b14]/20 px-8 py-4 text-sm uppercase tracking-[0.2em]">Instagram</a>
-            </div>
-          </motion.div>
+    section{
+      padding:50px 20px;
+      max-width:1000px;
+      margin:auto;
+    }
 
-          <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }} className="relative">
-            <div className="aspect-[4/5] rounded-[3rem] bg-gradient-to-br from-[#e8d9c9] via-[#fffaf3] to-[#b9957f] p-8 shadow-2xl shadow-[#4b2f20]/10">
-              <div className="flex h-full flex-col justify-between rounded-[2.2rem] border border-white/50 bg-white/35 p-8 backdrop-blur">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.35em] text-[#8a6a55]">Signature</p>
-                  <h2 className="mt-4 text-5xl font-light tracking-[-0.04em]">Crème de Pistache</h2>
-                </div>
-                <div className="grid grid-cols-2 gap-4">
-                  {highlights.map((h) => <div key={h} className="rounded-3xl bg-white/55 p-5 text-sm text-[#5d473b]">{h}</div>)}
-                </div>
-              </div>
-            </div>
-            <div className="absolute -bottom-8 -left-6 rounded-[2rem] bg-[#4a2b20] p-7 text-white shadow-xl">
-              <p className="text-xs uppercase tracking-[0.25em] text-white/60">Open daily</p>
-              <p className="mt-2 text-2xl font-light">11am – 11pm</p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+    .card{
+      background:white;
+      border-radius:20px;
+      padding:20px;
+      margin-bottom:20px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    }
 
-      <section id="menu" className="px-6 py-24 md:px-12">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
-            <div>
-              <p className="text-sm uppercase tracking-[0.35em] text-[#9b735c]">Menu</p>
-              <h2 className="mt-4 text-5xl font-light tracking-[-0.05em] md:text-7xl">Les signatures</h2>
-            </div>
-            <p className="max-w-md leading-7 text-[#6c5548]">Une carte courte, lisible et premium : tiramisus artisanaux, boissons froides, cafés chauds et frappuccinos.</p>
-          </div>
+    img{
+      width:100%;
+      border-radius:20px;
+      margin-bottom:20px;
+    }
 
-          <div className="rounded-[3rem] bg-white/50 p-5 shadow-xl shadow-[#4b2f20]/5 md:p-8">
-            <h3 className="mb-6 text-3xl font-light">Tiramisus — 75 DH</h3>
-            <div className="grid gap-4 md:grid-cols-2">
-              {tiramisus.map(([name, desc, price]) => (
-                <div key={name} className="rounded-[2rem] border border-[#2a1b14]/10 bg-[#fbf7f0] p-6">
-                  <div className="flex items-start justify-between gap-4">
-                    <h4 className="text-xl font-medium">{name}</h4>
-                    <span className="whitespace-nowrap text-sm text-[#9b735c]">{price}</span>
-                  </div>
-                  <p className="mt-3 text-sm leading-6 text-[#6c5548]">{desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+    .btn{
+      display:inline-block;
+      padding:14px 24px;
+      background:black;
+      color:white;
+      text-decoration:none;
+      border-radius:12px;
+      margin-top:10px;
+    }
 
-          <div className="mt-6 rounded-[3rem] bg-[#2a1b14] p-5 text-white shadow-xl shadow-[#4b2f20]/10 md:p-8">
-            <h3 className="mb-6 text-3xl font-light">Drinks</h3>
-            <div className="grid gap-3 md:grid-cols-3">
-              {drinks.map(([name, price]) => (
-                <div key={name} className="flex items-center justify-between rounded-2xl bg-white/8 px-5 py-4">
-                  <span>{name}</span>
-                  <span className="text-sm text-white/60">{price}</span>
-                </div>
-              ))}
-            </div>
-            <p className="mt-6 text-sm text-white/55">Extras : sirops vanille, coco, chocolat, mango. Laits végétaux +10 DH. Format canette +10 DH.</p>
-          </div>
-        </div>
-      </section>
+    footer{
+      text-align:center;
+      padding:40px;
+      background:#eee;
+    }
+  </style>
+</head>
 
-      <section id="story" className="bg-[#efe3d5] px-6 py-24 md:px-12">
-        <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-2 md:items-center">
-          <div className="rounded-[3rem] bg-[#d8c1aa] p-8">
-            <div className="aspect-square rounded-[2.2rem] bg-gradient-to-br from-[#fff9ef] via-[#cdb39c] to-[#5a372a]" />
-          </div>
-          <div>
-            <p className="text-sm uppercase tracking-[0.35em] text-[#9b735c]">La maison</p>
-            <h2 className="mt-4 text-5xl font-light tracking-[-0.05em] md:text-7xl">Une pause douce, calme et élégante.</h2>
-            <p className="mt-8 text-lg leading-8 text-[#6c5548]">
-              Les avis parlent d’un lieu beau, cosy et accueillant, parfait pour se poser, lire, travailler ou partager un dessert. Le site doit garder cette sensation : propre, premium, pas trop chargé.
-            </p>
-          </div>
-        </div>
-      </section>
+<body>
 
-      <section id="reviews" className="px-6 py-24 md:px-12">
-        <div className="mx-auto max-w-7xl">
-          <p className="text-sm uppercase tracking-[0.35em] text-[#9b735c]">Avis clients</p>
-          <h2 className="mt-4 text-5xl font-light tracking-[-0.05em] md:text-7xl">Ce que les clients retiennent</h2>
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {["Tiramisus à tomber", "Matcha, ube et boissons très esthétiques", "Personnel accueillant et lieu apaisant"].map((text) => (
-              <div key={text} className="rounded-[2rem] bg-white/55 p-8 shadow-sm">
-                <p className="text-3xl">★★★★★</p>
-                <p className="mt-5 text-xl font-light leading-8">{text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+<header>
+  <h1>Maison Moka</h1>
+  <p class="subtitle">Douceur & raffinement à Marrakech</p>
+</header>
 
-      <section id="contact" className="px-6 pb-24 md:px-12">
-        <div className="mx-auto max-w-7xl rounded-[3rem] bg-[#2a1b14] p-8 text-white md:p-12">
-          <div className="grid gap-10 md:grid-cols-2 md:items-end">
-            <div>
-              <p className="text-sm uppercase tracking-[0.35em] text-white/50">Contact</p>
-              <h2 className="mt-4 text-5xl font-light tracking-[-0.05em] md:text-7xl">Passez à la maison.</h2>
-            </div>
-            <div className="space-y-4 text-lg text-white/80">
-              <p>📍 Résidence Majorelle, 12 Rue Mekka, Marrakech 40000</p>
-              <p>🕒 Tous les jours · 11am – 11pm</p>
-              <p>📞 +212 600 912 813</p>
-              <p>📸 @maisonmoka___</p>
-              <div className="flex flex-wrap gap-3 pt-4">
-                <a href="tel:+212600912813" className="rounded-full bg-white px-6 py-3 text-sm uppercase tracking-[0.2em] text-[#2a1b14]">Appeler</a>
-                <a href="https://www.instagram.com/maisonmoka___/" className="rounded-full border border-white/25 px-6 py-3 text-sm uppercase tracking-[0.2em] text-white">Instagram</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-  );
-}
+<section>
+
+  <div class="card">
+    <h2>Tiramisus Signature</h2>
+    <p>Crème de Pistache — 75 DH</p>
+    <p>Éclat de Country Nutella — 75 DH</p>
+    <p>Framboise Pistache Kunafa — 75 DH</p>
+  </div>
+
+  <div class="card">
+    <h2>Boissons</h2>
+    <p>Matcha — 45/55 DH</p>
+    <p>Ube Coco — 40/55 DH</p>
+    <p>Frappuccino — 45/55 DH</p>
+  </div>
+
+  <div class="card">
+    <h2>Horaires</h2>
+    <p>Ouvert tous les jours</p>
+    <p>11h — 23h</p>
+  </div>
+
+  <div class="card">
+    <h2>Adresse</h2>
+    <p>Résidence Majorelle, 12 Rue Mekka, Marrakech</p>
+
+    <a class="btn" href="https://www.instagram.com/maisonmoka___/" target="_blank">
+      Instagram
+    </a>
+  </div>
+
+</section>
+
+<footer>
+  Maison Moka © 2026
+</footer>
+
+</body>
+</html>
 

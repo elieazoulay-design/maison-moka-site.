@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Maison Moka — Marrakech</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -30,7 +28,7 @@ overflow-x:hidden;
 
 /* NAVBAR */
 
-.nav{
+nav{
 position:fixed;
 top:0;
 left:0;
@@ -40,57 +38,79 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 z-index:1000;
+background:rgba(0,0,0,0.25);
 backdrop-filter:blur(12px);
-background:rgba(255,255,255,.08);
 }
 
 .logo{
 font-family:'Playfair Display',serif;
-font-size:28px;
+font-size:32px;
 font-weight:700;
 color:white;
-letter-spacing:2px;
 }
 
-.nav-links{
+.nav-right{
 display:flex;
-gap:34px;
+align-items:center;
+gap:30px;
 }
 
-.nav-links a{
-text-decoration:none;
+nav ul{
+display:flex;
+list-style:none;
+gap:28px;
+}
+
+nav ul li a{
 color:white;
-font-size:14px;
+text-decoration:none;
 font-weight:500;
-transition:.3s;
+transition:0.3s;
 }
 
-.nav-links a:hover{
-opacity:.7;
+nav ul li a:hover{
+opacity:0.7;
+}
+
+.lang-btn{
+padding:10px 18px;
+border-radius:40px;
+border:1px solid rgba(255,255,255,0.4);
+background:transparent;
+color:white;
+cursor:pointer;
+font-weight:600;
+transition:0.3s;
+}
+
+.lang-btn:hover{
+background:white;
+color:black;
 }
 
 /* HERO */
 
 .hero{
 height:100vh;
-background:
-linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.55)),
-linear-gradient(135deg,#b99674,#5f4032);
+background:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
+url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=2000&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 text-align:center;
 padding:20px;
+color:white;
 }
 
 .hero-content{
 max-width:900px;
-color:white;
 }
 
 .hero h1{
-font-size:95px;
 font-family:'Playfair Display',serif;
+font-size:105px;
 line-height:1;
 margin-bottom:24px;
 }
@@ -98,83 +118,99 @@ margin-bottom:24px;
 .hero p{
 font-size:24px;
 font-weight:300;
-line-height:1.6;
-margin-bottom:42px;
+line-height:1.8;
+margin-bottom:40px;
 }
 
 .hero-btn{
 display:inline-block;
-padding:16px 38px;
-border-radius:50px;
+padding:18px 42px;
 background:#e0c19c;
-color:#1f1f1f;
+border-radius:50px;
 text-decoration:none;
+color:#1f1f1f;
 font-weight:600;
-transition:.3s;
+transition:0.3s;
 }
 
 .hero-btn:hover{
 transform:translateY(-4px);
-background:white;
 }
 
-/* GENERAL */
+/* SECTION */
 
 .section{
 padding:120px 10%;
 }
 
 .title{
-font-size:60px;
 font-family:'Playfair Display',serif;
-margin-bottom:24px;
+font-size:68px;
 text-align:center;
+margin-bottom:25px;
 }
 
 .subtitle{
-max-width:760px;
+max-width:820px;
 margin:auto;
 text-align:center;
-line-height:1.8;
+line-height:1.9;
+font-size:18px;
 color:#666;
 margin-bottom:80px;
-font-size:18px;
 }
 
 /* CARDS */
 
 .cards{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:35px;
 }
 
 .card{
 background:white;
-padding:40px;
-border-radius:30px;
-box-shadow:0 10px 30px rgba(0,0,0,.06);
-transition:.4s;
+border-radius:34px;
+overflow:hidden;
+box-shadow:0 12px 40px rgba(0,0,0,0.06);
+transition:0.3s;
 }
 
 .card:hover{
 transform:translateY(-8px);
 }
 
-.card h3{
-font-size:32px;
+.card-top{
+height:290px;
+background:linear-gradient(135deg,#e7d2bb,#c7a988);
+display:flex;
+justify-content:center;
+align-items:center;
 font-family:'Playfair Display',serif;
+font-size:38px;
+color:white;
+}
+
+.card-content{
+padding:35px;
+}
+
+.card h3{
+font-family:'Playfair Display',serif;
+font-size:42px;
 margin-bottom:18px;
+line-height:1.1;
 }
 
 .card p{
-line-height:1.8;
+line-height:1.9;
+font-size:17px;
 color:#666;
 }
 
 /* MENU */
 
-.menu{
+.menu-section{
 background:#ece2d3;
 }
 
@@ -187,16 +223,16 @@ gap:40px;
 .menu-box{
 background:white;
 padding:45px;
-border-radius:30px;
+border-radius:34px;
 }
 
 .menu-box h3{
-font-size:38px;
 font-family:'Playfair Display',serif;
-margin-bottom:34px;
+font-size:42px;
+margin-bottom:30px;
 }
 
-.item{
+.menu-item{
 display:flex;
 justify-content:space-between;
 padding:18px 0;
@@ -204,43 +240,42 @@ border-bottom:1px solid #eee;
 font-size:18px;
 }
 
-.item span:last-child{
+.menu-item span:last-child{
 font-weight:600;
 }
 
 /* INSTAGRAM */
 
 .instagram{
-background:#1f1f1f;
+background:#1b1b1b;
 color:white;
 text-align:center;
 padding:120px 10%;
 }
 
 .instagram h2{
-font-size:58px;
 font-family:'Playfair Display',serif;
+font-size:64px;
 margin-bottom:24px;
 }
 
 .instagram p{
-max-width:700px;
+max-width:760px;
 margin:auto;
-line-height:1.8;
+line-height:1.9;
 font-size:18px;
-color:#cfcfcf;
+color:#cccccc;
 margin-bottom:40px;
 }
 
 .instagram a{
 display:inline-block;
-padding:16px 36px;
-border:1px solid rgba(255,255,255,.3);
+padding:18px 38px;
 border-radius:50px;
-text-decoration:none;
+border:1px solid rgba(255,255,255,0.3);
 color:white;
-font-weight:500;
-transition:.3s;
+text-decoration:none;
+transition:0.3s;
 }
 
 .instagram a:hover{
@@ -248,24 +283,24 @@ background:white;
 color:black;
 }
 
-/* CONTACT */
+/* FOOTER */
 
-.footer{
-padding:100px 10%;
+footer{
 background:#111;
 color:white;
 text-align:center;
+padding:90px 10%;
 }
 
-.footer h2{
-font-size:48px;
+footer h2{
 font-family:'Playfair Display',serif;
-margin-bottom:24px;
+font-size:50px;
+margin-bottom:25px;
 }
 
-.footer p{
+footer p{
 margin-bottom:12px;
-color:#ccc;
+color:#cccccc;
 }
 
 /* MOBILE */
@@ -273,7 +308,7 @@ color:#ccc;
 @media(max-width:900px){
 
 .hero h1{
-font-size:58px;
+font-size:62px;
 }
 
 .hero p{
@@ -284,16 +319,16 @@ font-size:20px;
 grid-template-columns:1fr;
 }
 
-.nav-links{
+nav ul{
 display:none;
 }
 
 .title{
-font-size:42px;
+font-size:46px;
 }
 
-.instagram h2{
-font-size:42px;
+.card h3{
+font-size:34px;
 }
 
 }
@@ -303,38 +338,40 @@ font-size:42px;
 
 <body>
 
-<!-- NAV -->
+<nav>
 
-<div class="nav">
+<div class="logo">Maison Moka</div>
 
-<div class="logo">
-Maison Moka
+<div class="nav-right">
+
+<ul>
+<li><a href="#about" data-fr="Maison" data-en="About">Maison</a></li>
+<li><a href="#menu" data-fr="Menu" data-en="Menu">Menu</a></li>
+<li><a href="#instagram" data-fr="Instagram" data-en="Instagram">Instagram</a></li>
+<li><a href="#contact" data-fr="Contact" data-en="Contact">Contact</a></li>
+</ul>
+
+<button class="lang-btn" onclick="toggleLang()">EN</button>
+
 </div>
 
-<div class="nav-links">
-<a href="#about">Maison</a>
-<a href="#menu">Menu</a>
-<a href="#instagram">Instagram</a>
-<a href="#contact">Contact</a>
-</div>
-
-</div>
-
-<!-- HERO -->
+</nav>
 
 <section class="hero">
 
 <div class="hero-content">
 
-<h1>
-Maison Moka
-</h1>
+<h1>Maison Moka</h1>
 
-<p>
-Tiramisu artisanal, boissons signatures et ambiance raffinée au cœur de Marrakech.
+<p
+data-fr="Desserts signatures, café raffiné et ambiance premium au cœur de Marrakech."
+data-en="Signature desserts, refined coffee and premium atmosphere in the heart of Marrakech.">
+Desserts signatures, café raffiné et ambiance premium au cœur de Marrakech.
 </p>
 
-<a href="#menu" class="hero-btn">
+<a href="#menu" class="hero-btn"
+data-fr="Découvrir le menu"
+data-en="Explore the menu">
 Découvrir le menu
 </a>
 
@@ -342,15 +379,17 @@ Découvrir le menu
 
 </section>
 
-<!-- ABOUT -->
-
 <section class="section" id="about">
 
-<h2 class="title">
+<h2 class="title"
+data-fr="Une expérience premium"
+data-en="A premium experience">
 Une expérience premium
 </h2>
 
-<p class="subtitle">
+<p class="subtitle"
+data-fr="Maison Moka mélange desserts signatures, café raffiné et ambiance élégante dans un espace pensé pour se poser, travailler ou partager un moment gourmand à Marrakech."
+data-en="Maison Moka combines signature desserts, refined coffee and an elegant atmosphere in a space designed to relax, work or share a sweet moment in Marrakech.">
 Maison Moka mélange desserts signatures, café raffiné et ambiance élégante dans un espace pensé pour se poser, travailler ou partager un moment gourmand à Marrakech.
 </p>
 
@@ -358,53 +397,88 @@ Maison Moka mélange desserts signatures, café raffiné et ambiance élégante 
 
 <div class="card">
 
-<h3>
+<div class="card-top">
+Crème Pistache
+</div>
+
+<div class="card-content">
+
+<h3
+data-fr="Tiramisus Signature"
+data-en="Signature Tiramisus">
 Tiramisus Signature
 </h3>
 
-<p>
+<p
+data-fr="Des recettes généreuses et artisanales avec des saveurs uniques comme pistache, kunafa et Nutella."
+data-en="Generous artisanal recipes with unique flavors like pistachio, kunafa and Nutella.">
 Des recettes généreuses et artisanales avec des saveurs uniques comme pistache, kunafa et Nutella.
 </p>
 
 </div>
-
-<div class="card">
-
-<h3>
-Boissons Créatives
-</h3>
-
-<p>
-Matcha, frappuccino, cafés glacés et boissons signatures dans une esthétique moderne et minimaliste.
-</p>
-
 </div>
 
 <div class="card">
 
-<h3>
+<div class="card-top">
+Matcha Latte
+</div>
+
+<div class="card-content">
+
+<h3
+data-fr="Boissons Créatives"
+data-en="Creative Drinks">
+Boissons Créatives
+</h3>
+
+<p
+data-fr="Matcha, frappuccino, cafés glacés et boissons signatures dans une esthétique moderne et minimaliste."
+data-en="Matcha, frappuccinos, iced coffees and signature drinks with a modern minimalist aesthetic.">
+Matcha, frappuccino, cafés glacés et boissons signatures dans une esthétique moderne et minimaliste.
+</p>
+
+</div>
+</div>
+
+<div class="card">
+
+<div class="card-top">
+Marrakech
+</div>
+
+<div class="card-content">
+
+<h3
+data-fr="Ambiance Marrakech"
+data-en="Marrakech Atmosphere">
 Ambiance Marrakech
 </h3>
 
-<p>
+<p
+data-fr="Un espace cozy et élégant avec une identité premium inspirée des cafés modernes marocains."
+data-en="A cozy and elegant space with a premium identity inspired by modern Moroccan cafés.">
 Un espace cozy et élégant avec une identité premium inspirée des cafés modernes marocains.
 </p>
 
+</div>
 </div>
 
 </div>
 
 </section>
 
-<!-- MENU -->
+<section class="section menu-section" id="menu">
 
-<section class="section menu" id="menu">
-
-<h2 class="title">
+<h2 class="title"
+data-fr="Le Menu"
+data-en="The Menu">
 Le Menu
 </h2>
 
-<p class="subtitle">
+<p class="subtitle"
+data-fr="Une sélection raffinée de desserts signatures et boissons créatives."
+data-en="A refined selection of signature desserts and creative drinks.">
 Une sélection raffinée de desserts signatures et boissons créatives.
 </p>
 
@@ -412,26 +486,24 @@ Une sélection raffinée de desserts signatures et boissons créatives.
 
 <div class="menu-box">
 
-<h3>
-Tiramisus
-</h3>
+<h3>Tiramisus</h3>
 
-<div class="item">
+<div class="menu-item">
 <span>Crème de Pistache</span>
 <span>75 DH</span>
 </div>
 
-<div class="item">
+<div class="menu-item">
 <span>Éclat de Country Nutella</span>
 <span>75 DH</span>
 </div>
 
-<div class="item">
+<div class="menu-item">
 <span>Framboise Pistache Kunafa</span>
 <span>75 DH</span>
 </div>
 
-<div class="item">
+<div class="menu-item">
 <span>Poire Vanille Madagascar</span>
 <span>75 DH</span>
 </div>
@@ -440,26 +512,28 @@ Tiramisus
 
 <div class="menu-box">
 
-<h3>
+<h3
+data-fr="Boissons"
+data-en="Drinks">
 Boissons
 </h3>
 
-<div class="item">
+<div class="menu-item">
 <span>Matcha</span>
 <span>45 / 55 DH</span>
 </div>
 
-<div class="item">
+<div class="menu-item">
 <span>Ube Coco</span>
 <span>40 / 55 DH</span>
 </div>
 
-<div class="item">
+<div class="menu-item">
 <span>Frappuccino</span>
 <span>45 / 55 DH</span>
 </div>
 
-<div class="item">
+<div class="menu-item">
 <span>Café Latte</span>
 <span>35 DH</span>
 </div>
@@ -470,17 +544,18 @@ Boissons
 
 </section>
 
-<!-- INSTAGRAM -->
-
 <section class="instagram" id="instagram">
 
-<h2>
+<h2
+data-fr="Découvrez notre univers"
+data-en="Discover our world">
 Découvrez notre univers
 </h2>
 
-<p>
-Pour voir nos desserts, boissons et l’ambiance du café,
-rendez-vous directement sur notre Instagram.
+<p
+data-fr="Pour voir nos desserts, boissons et l’ambiance du café, rendez-vous directement sur notre Instagram."
+data-en="To see our desserts, drinks and café atmosphere, visit our Instagram.">
+Pour voir nos desserts, boissons et l’ambiance du café, rendez-vous directement sur notre Instagram.
 </p>
 
 <a href="https://instagram.com/maisonmoka___" target="_blank">
@@ -489,31 +564,44 @@ rendez-vous directement sur notre Instagram.
 
 </section>
 
-<!-- CONTACT -->
+<footer id="contact">
 
-<footer class="footer" id="contact">
+<h2>Maison Moka</h2>
 
-<h2>
-Maison Moka
-</h2>
+<p>📍 Marrakech</p>
 
-<p>
-📍 Marrakech
-</p>
-
-<p>
+<p
+data-fr="🕒 Tous les jours — 11h à 23h"
+data-en="🕒 Open daily — 11am to 11pm">
 🕒 Tous les jours — 11h à 23h
 </p>
 
-<p>
-📞 +212 600 912 813
-</p>
+<p>📞 +212 600 912 813</p>
 
-<p>
-Instagram : @maisonmoka___
-</p>
+<p>Instagram : @maisonmoka___</p>
 
 </footer>
+
+<script>
+
+let currentLang = "fr";
+
+function toggleLang(){
+
+currentLang = currentLang === "fr" ? "en" : "fr";
+
+document.querySelectorAll("[data-fr]").forEach(el => {
+
+el.textContent = el.getAttribute("data-" + currentLang);
+
+});
+
+document.querySelector(".lang-btn").textContent =
+currentLang === "fr" ? "EN" : "FR";
+
+}
+
+</script>
 
 </body>
 </html>
